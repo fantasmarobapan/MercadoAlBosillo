@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MercadoAlBosillo"
         tools:targetApi="31">
-
+        <activity
+            android:name=".InventoryDetailActivity"
+            android:exported="false" />
         <activity
             android:name=".InventoryListActivity"
             android:exported="false" />
@@ -21,17 +23,16 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".SplashActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
-                <action android:name = "android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name = "android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

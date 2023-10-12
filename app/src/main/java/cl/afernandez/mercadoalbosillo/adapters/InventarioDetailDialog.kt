@@ -29,6 +29,5 @@ class InventarioDetailDialog(
         buttonGoBack.setOnClickListener{
             dismiss()
         }
-
     }
 }
