@@ -10,6 +10,7 @@ class InventoryDetailActivity : AppCompatActivity() {
 
     private lateinit var textName: TextView
     private lateinit var textPrecio: TextView
+    private lateinit var textCantidad: TextView
 
     private lateinit var producto: Producto
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,16 +19,18 @@ class InventoryDetailActivity : AppCompatActivity() {
 
         textName = findViewById(R.id.textViewProducto)
         textPrecio = findViewById(R.id.textViewPrecio)
+        textCantidad = findViewById(R.id.textViewCantidad)
 
         if (Build.VERSION.SDK_INT >= 33){
-            producto = intent.getParcelableExtra("inventario", Producto::class.java) ?: Producto("", 0)
+            producto = intent.getParcelableExtra("inventario", Producto::class.java) ?: Producto("", 0, 0)
         }else{
-            producto = intent.getParcelableExtra("inventario") ?: Producto("", 0)
+            producto = intent.getParcelableExtra("inventario") ?: Producto("", 0, 0)
         }
 
         if (producto != null){
             textName.text = producto.producto
             textPrecio.setText(producto.precio.toString())
+            textCantidad.setText(producto.cantidad.toString())
         }
         /*textName.setOnClickListener(){
             Toast.makeText(this, inventario.precio, Toast.LENGTH_SHORT).show()

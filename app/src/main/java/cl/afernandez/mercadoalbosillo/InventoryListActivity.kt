@@ -26,11 +26,11 @@ class InventoryListActivity : AppCompatActivity() {
         listViewInventario = findViewById(R.id.listViewProductos)
 
         producto = mutableListOf(
-            Producto("Lechuga", 1090),
-            Producto("Berenjena", 1400),
-            Producto("Chocolate Vizzio", 2250),
-            Producto("Spaghetti", 1229),
-            Producto("Yoghurt", 646)
+            Producto("Lechuga", 1090, 4),
+            Producto("Berenjena", 1400, 5),
+            Producto("Chocolate Vizzio", 2250, 2),
+            Producto("Spaghetti", 1229, 10),
+            Producto("Yoghurt", 646, 12)
         )
 
         adapter = InventarioListAdapter(this, R.layout.list_item_inventario, producto)

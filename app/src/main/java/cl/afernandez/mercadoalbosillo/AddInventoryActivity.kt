@@ -11,6 +11,7 @@ class AddInventoryActivity : AppCompatActivity() {
 
     private lateinit var editTextName: EditText
     private lateinit var editTextPrecio: EditText
+    private lateinit var editTextCantidad: EditText
     private lateinit var buttonSave: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,13 +20,15 @@ class AddInventoryActivity : AppCompatActivity() {
 
         editTextName = findViewById(R.id.editTextName)
         editTextPrecio = findViewById(R.id.editTextPrecio)
+        editTextCantidad = findViewById(R.id.editTextCantidad)
         buttonSave = findViewById(R.id.buttonSaveProducto)
 
         buttonSave.setOnClickListener {
             val nombre = editTextName.text.toString()
             val precio = editTextPrecio.text.toString().toIntOrNull() ?: 0
+            val cantidad = editTextCantidad.text.toString().toIntOrNull() ?:0
 
-            val producto = Producto(nombre, precio)
+            val producto = Producto(nombre, precio, cantidad)
 
             val resultadoIntent = Intent()
             resultadoIntent.putExtra("new", producto)
