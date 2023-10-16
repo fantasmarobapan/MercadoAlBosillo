@@ -21,10 +21,12 @@ class InventarioDetailDialog(
 
         val textViewName = findViewById<TextView>(R.id.textViewProducto)
         val textViewPrecio = findViewById<TextView>(R.id.textViewPrecio)
+        val textViewCantidad = findViewById<TextView>(R.id.textViewCantidad)
         val buttonGoBack = findViewById<Button>(R.id.buttonGoBackDialog)
 
         textViewName.text = producto.producto
         textViewPrecio.text = producto.precio.toString()
+        textViewCantidad.text = producto.precio.toString()
 
         buttonGoBack.setOnClickListener{
             dismiss()
