@@ -42,5 +42,5 @@ Este proyecto es una aplicación móvil que tiene como objetivo ayudar a los usu
 ![Diagrama de clases](https://github.com/fantasmarobapan/MercadoAlBosillo/blob/master/Diagrama%20de%20%20clases.png)
 
 ## Link relevantes
-Link del [video]().  
-Link de descarga de la [APK]().
+Link del [video](https://youtu.be/EsBbA89mOo4).  
+Link de descarga de la [APK](https://drive.google.com/file/d/1WTjZyAVldPI2WhuYx5g5Z7WvWAzX7r8m/view?usp=sharing).
