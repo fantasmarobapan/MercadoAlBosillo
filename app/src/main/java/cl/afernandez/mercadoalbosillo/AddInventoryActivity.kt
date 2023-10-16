@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import cl.afernandez.mercadoalbosillo.entity.Inventario
+import cl.afernandez.mercadoalbosillo.entity.Producto
 
 class AddInventoryActivity : AppCompatActivity() {
 
@@ -19,16 +19,16 @@ class AddInventoryActivity : AppCompatActivity() {
 
         editTextName = findViewById(R.id.editTextName)
         editTextPrecio = findViewById(R.id.editTextPrecio)
-        buttonSave = findViewById(R.id.buttonSave)
+        buttonSave = findViewById(R.id.buttonSaveProducto)
 
         buttonSave.setOnClickListener {
             val nombre = editTextName.text.toString()
             val precio = editTextPrecio.text.toString().toIntOrNull() ?: 0
 
-            val inventario = Inventario(nombre, precio)
+            val producto = Producto(nombre, precio)
 
             val resultadoIntent = Intent()
-            resultadoIntent.putExtra("new", inventario)
+            resultadoIntent.putExtra("new", producto)
             setResult(RESULT_OK, resultadoIntent)
             finish()
         }

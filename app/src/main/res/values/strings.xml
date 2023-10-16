@@ -3,10 +3,16 @@
     <string name="Autor">Adolfo Fernandez</string>
     <string name="ProductoText">Producto: </string>
     <string name="PrecioText">Precio: $</string>
+    <string name="NombreText">Nombre: </string>
+    <string name="DireccionText">Direccion: </string>
+    <string name="ValoracionText">Calificacion del 1 al 5</string>
     <string name="ButtonBack">Regresar</string>
     <string name="ButtonInventario">Inventario</string>
-    <string name="ButtonSave">Agregar Producto</string>
-    <string name="ButtonAdd">Añadir producto</string>
-    <string name="NombreHint">Nombre del producto</string>
+    <string name="ButtonSaveProducto">Agregar Producto</string>
+    <string name="ButtonSaveTienda">Agregar Tienda</string>
+    <string name="ButtonAddProduct">Añadir producto</string>
+    <string name="ButtonAddShop">Añadir tienda</string>
+    <string name="ButtonTienda">Tiendas</string>
+    <string name="ProductoHint">Nombre del producto</string>
     <string name="PrecioHint">Precio del producto</string>
 </resources>

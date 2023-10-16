@@ -7,19 +7,19 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import cl.afernandez.mercadoalbosillo.R
-import cl.afernandez.mercadoalbosillo.entity.Inventario
+import cl.afernandez.mercadoalbosillo.entity.Producto
 
 class InventarioListAdapter(
     context: Context,
     resource: Int,
-    inventarios: List<Inventario>
-) : ArrayAdapter<Inventario>(context, resource, inventarios){
+    productos: List<Producto>
+) : ArrayAdapter<Producto>(context, resource, productos){
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val listItemView =convertView ?: inflater.inflate(R.layout.list_item_inventario, null)
 
-        val inventory= getItem(position)
+        val inventory = getItem(position)
 
         val nameTextView = listItemView.findViewById<TextView>(R.id.textViewProducto)
         val precioTextView = listItemView.findViewById<TextView>(R.id.textViewPrecio)

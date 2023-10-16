@@ -3,7 +3,7 @@ package cl.afernandez.mercadoalbosillo.entity
 import android.os.Parcel
 import android.os.Parcelable
 
-data class Inventario(
+data class Producto(
     val producto: String?,
     val precio: Int
 ) : Parcelable {
@@ -21,12 +21,12 @@ data class Inventario(
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<Inventario> {
-        override fun createFromParcel(parcel: Parcel): Inventario {
-            return Inventario(parcel)
+    companion object CREATOR : Parcelable.Creator<Producto> {
+        override fun createFromParcel(parcel: Parcel): Producto {
+            return Producto(parcel)
         }
 
-        override fun newArray(size: Int): Array<Inventario?> {
+        override fun newArray(size: Int): Array<Producto?> {
             return arrayOfNulls(size)
         }
     }

@@ -15,4 +15,9 @@ class MainActivity : AppCompatActivity() {
         val intentInventoryList = Intent(this, InventoryListActivity::class.java)
         startActivity(intentInventoryList)
     }
+
+    fun goTienda(view: View){
+        val intentTiendaList = Intent(this, TiendaListActivity::class.java)
+        startActivity(intentTiendaList)
+    }
 }

@@ -3,19 +3,17 @@ package cl.afernandez.mercadoalbosillo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.BoringLayout
 import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.ListView
 import cl.afernandez.mercadoalbosillo.adapters.InventarioDetailDialog
 import cl.afernandez.mercadoalbosillo.adapters.InventarioListAdapter
-import cl.afernandez.mercadoalbosillo.entity.Inventario
+import cl.afernandez.mercadoalbosillo.entity.Producto
 
 class InventoryListActivity : AppCompatActivity() {
 
     private lateinit var listViewInventario: ListView
     private lateinit var adapter: InventarioListAdapter
-    private lateinit var inventario: MutableList<Inventario>
+    private lateinit var producto: MutableList<Producto>
     private var listOption: Boolean = true
     private var detailOption: Boolean = false
     companion object {
@@ -27,26 +25,26 @@ class InventoryListActivity : AppCompatActivity() {
 
         listViewInventario = findViewById(R.id.listViewProductos)
 
-        inventario = mutableListOf(
-            Inventario("Lechuga", 1090),
-            Inventario("Berenjena", 1400),
-            Inventario("Chocolate Vizzio", 2250),
-            Inventario("Spaghetti", 1229),
-            Inventario("Yoghurt", 646)
+        producto = mutableListOf(
+            Producto("Lechuga", 1090),
+            Producto("Berenjena", 1400),
+            Producto("Chocolate Vizzio", 2250),
+            Producto("Spaghetti", 1229),
+            Producto("Yoghurt", 646)
         )
 
-        adapter = InventarioListAdapter(this, R.layout.list_item_inventario, inventario)
+        adapter = InventarioListAdapter(this, R.layout.list_item_inventario, producto)
 
         listViewInventario.adapter = adapter
 
         listViewInventario.setOnItemClickListener{_, _, position, _->
-            val selectedProducto = inventario[position]
+            val selectedProducto = producto[position]
             listOption = !listOption
             if (detailOption){
                 showInventoryDetailDialog(selectedProducto)
             }
             else{
-                val intent = Intent(this, InventarioDetailDialog::class.java)
+                val intent = Intent(this, InventoryDetailActivity::class.java)
                 intent.putExtra("inventario", selectedProducto)
                 startActivity(intent)
             }
@@ -58,8 +56,8 @@ class InventoryListActivity : AppCompatActivity() {
         startActivityForResult(intent, REQUEST_REGISTER)
     }
 
-    private fun showInventoryDetailDialog(inventario: Inventario){
-        val dialogo = InventarioDetailDialog(this, inventario)
+    private fun showInventoryDetailDialog(producto: Producto){
+        val dialogo = InventarioDetailDialog(this, producto)
         dialogo.show()
     }
 
@@ -67,9 +65,9 @@ class InventoryListActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if(requestCode == REQUEST_REGISTER && resultCode == RESULT_OK){
-            val nuevoProducto = data?.getParcelableExtra<Inventario>("new")
+            val nuevoProducto = data?.getParcelableExtra<Producto>("new")
             if(nuevoProducto != null){
-                inventario.add(nuevoProducto)
+                producto.add(nuevoProducto)
                 adapter.notifyDataSetChanged()
             }
         }

@@ -4,16 +4,14 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import android.widget.Toast
-import cl.afernandez.mercadoalbosillo.R
-import cl.afernandez.mercadoalbosillo.entity.Inventario
+import cl.afernandez.mercadoalbosillo.entity.Producto
 
 class InventoryDetailActivity : AppCompatActivity() {
 
     private lateinit var textName: TextView
     private lateinit var textPrecio: TextView
 
-    private lateinit var inventario: Inventario
+    private lateinit var producto: Producto
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inventory_detail)
@@ -22,14 +20,14 @@ class InventoryDetailActivity : AppCompatActivity() {
         textPrecio = findViewById(R.id.textViewPrecio)
 
         if (Build.VERSION.SDK_INT >= 33){
-            inventario = intent.getParcelableExtra("inventario", Inventario::class.java) ?: Inventario("", 0)
+            producto = intent.getParcelableExtra("inventario", Producto::class.java) ?: Producto("", 0)
         }else{
-            inventario = intent.getParcelableExtra("inventario") ?: Inventario("", 0)
+            producto = intent.getParcelableExtra("inventario") ?: Producto("", 0)
         }
 
-        if (inventario != null){
-            textName.text = inventario.producto
-            textPrecio.setText(inventario.precio.toString())
+        if (producto != null){
+            textName.text = producto.producto
+            textPrecio.setText(producto.precio.toString())
         }
         /*textName.setOnClickListener(){
             Toast.makeText(this, inventario.precio, Toast.LENGTH_SHORT).show()

@@ -10,26 +10,32 @@
     tools:context=".AddInventoryActivity">
 
     <EditText
-        android:id="@+id/editTextName"
+        android:id="@+id/editTextNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/ProductoText"
+        android:hint="@string/NombreText"
         android:inputType="textPersonName"
         />
 
     <EditText
-        android:id="@+id/editTextPrecio"
+        android:id="@+id/editTextDireccion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/PrecioText"
+        android:hint="@string/DireccionText"
+        android:inputType="textPostalAddress"
+        />
+    <EditText
+        android:id="@+id/editTextValoracion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/ValoracionText"
         android:inputType="number"
         />
-
     <Button
-        android:id="@+id/buttonSaveProducto"
+        android:id="@+id/buttonSaveTienda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/ButtonSaveProducto"
         />
-    
+
 </LinearLayout>
