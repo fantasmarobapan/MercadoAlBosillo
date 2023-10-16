@@ -35,7 +35,7 @@
         android:id="@+id/buttonSaveTienda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ButtonSaveProducto"
+        android:text="@string/ButtonSaveTienda"
         />
 
 </LinearLayout>
