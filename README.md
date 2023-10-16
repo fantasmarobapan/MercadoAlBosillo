@@ -1,6 +1,7 @@
 # MercadoAlBosillo
 
-Este proyecto es una aplicación móvil que tiene como objetivo ayudar a los usuarios a gestionar varias funciones relacionadas con compras, tiendas, inventarios, cuentas y grupos familiares. A continuación, se detallan los requerimientos funcionales de la aplicación:
+Este proyecto es una aplicacion móvil que tiene como objetivo 
+Este proyecto es una aplicación móvil que tiene como objetivo ayudar a los usuarios a gestionar varias funciones relacionadas con compras, tiendas, inventarios, cuentas y grupos familiares. Con el fin de entregar una solucion de todo en uno para la gestion de la compra para el hogar y ver tiendas que pueda resultar interesantes para el usuario
 
 ## Requerimientos Funcionales
 
@@ -30,9 +31,16 @@ Este proyecto es una aplicación móvil que tiene como objetivo ayudar a los usu
 - Eliminar grupos familiares.
 - Compartir datos de la lista de compra, inventario y presupuesto entre miembros del grupo familiar.
 
-## Requerimientos No Funcionales
+# Requerimientos No Funcionales
 
 - La aplicación debe ser segura.
 - La aplicación debe ser intuitiva.
 - La aplicación debe ser atractiva para el usuario.
 - La aplicación no debe quedarse trabada durante su uso.
+
+# Diagrama de clases
+![Diagrama de clases](https://github.com/fantasmarobapan/MercadoAlBosillo/blob/master/Diagrama%20de%20%20clases.png)
+
+## Link relevantes
+Link del [video]().  
+Link de descarga de la [APK]().
