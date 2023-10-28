@@ -43,4 +43,4 @@ Este proyecto es una aplicación móvil que tiene como objetivo ayudar a los usu
 
 ## Link relevantes
 Link del [video](https://youtu.be/EsBbA89mOo4).  
-Link de descarga de la [APK](https://drive.google.com/file/d/1WTjZyAVldPI2WhuYx5g5Z7WvWAzX7r8m/view?usp=sharing).
+Nuevo link de descarga de la [APK]([https://drive.google.com/file/d/1WTjZyAVldPI2WhuYx5g5Z7WvWAzX7r8m/view?usp=sharing](https://mega.nz/file/Mnc1kaBA#CknmYlcOU9hlyQrEY9IV-iarjxe8qvPNu5yQDfXVbIE)https://mega.nz/file/Mnc1kaBA#CknmYlcOU9hlyQrEY9IV-iarjxe8qvPNu5yQDfXVbIE).
