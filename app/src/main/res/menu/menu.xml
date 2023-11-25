@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/inventarioOpcion"
+        android:title="@string/inventario"
+        />
+
+    <item
+        android:id="@+id/movimientoOpcion"
+        android:title="@string/movimiento"
+        />
+    <item
+        android:id="@+id/ajusteOpcion"
+        android:title="@string/ajustes"
+        android:icon="@drawable/round_settings_24"
+        app:showAsAction="always"
+        />
+</menu>

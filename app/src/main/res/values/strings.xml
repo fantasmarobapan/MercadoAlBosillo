@@ -17,6 +17,13 @@
     <string name="ProductoHint">Nombre del producto</string>
     <string name="PrecioHint">Precio del producto</string>
 
+
+    <!-- string del adapter del inventario -->
     <string name="minus">-</string>
     <string name="plus">+</string>
+
+    <!-- string de la toolbar -->
+    <string name="inventario">Inventario</string>
+    <string name="movimiento">Movimientos</string>
+    <string name="ajustes">Ajustes</string>
 </resources>
