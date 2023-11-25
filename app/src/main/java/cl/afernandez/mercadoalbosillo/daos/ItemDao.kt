@@ -4,13 +4,14 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import cl.afernandez.mercadoalbosillo.entity.Producto
+import androidx.room.Transaction
+import cl.afernandez.mercadoalbosillo.entity.Item
 
 @Dao
-interface ProductoDao {
+interface ItemDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertProducto(vararg producto: Producto)
+    fun insertItem(item: Item)
 
-    @Query("SELECT * FROM productos")
-    fun getAllProductos(): List<Producto>
+    @Query("SELECT * FROM items")
+    fun getAllItems(): List<Item>
 }

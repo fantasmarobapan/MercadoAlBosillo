@@ -2,14 +2,20 @@ package cl.afernandez.mercadoalbosillo.entity
 
 import android.os.Parcel
 import android.os.Parcelable
+import androidx.room.Embedded
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
+@Entity(tableName = "items")
 data class Item(
-    val producto: Producto,
+    @Embedded val producto: Producto,
     val cantidad: Int
 ) : Parcelable {
+    @PrimaryKey(autoGenerate = true)
+    var id: Long = 0
     constructor(parcel: Parcel) : this(
         parcel.readParcelable(Producto::class.java.classLoader)!!, // Leer el objeto Producto del Parcel
-        parcel.readInt()
+        parcel.readInt(),
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -29,5 +35,13 @@ data class Item(
         override fun newArray(size: Int): Array<Item?> {
             return arrayOfNulls(size)
         }
+    }
+
+    fun toMovimiento(accion: String): Movimiento {
+        return Movimiento(
+            itemId = id,
+            nombreProducto = producto.nombre ?: "",
+            accion = accion
+        )
     }
 }

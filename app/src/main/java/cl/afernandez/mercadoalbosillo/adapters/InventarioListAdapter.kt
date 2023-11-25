@@ -16,7 +16,6 @@ class InventarioListAdapter(
     resource: Int,
     items: List<Item>
 ) : ArrayAdapter<Item>(context, resource, items) {
-
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val listItemView = convertView ?: inflater.inflate(R.layout.item_producto, null)

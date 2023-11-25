@@ -26,4 +26,22 @@
     <string name="inventario">Inventario</string>
     <string name="movimiento">Movimientos</string>
     <string name="ajustes">Ajustes</string>
+
+    <!-- string inventario -->
+    <string name="hintBuscar">Buscar nombre</string>
+    <string name="hintOrden">Ordenar Por</string>
+    <string name="ordenDefecto">Más reciente</string>
+    <string name="ordenBebible">Bebibles</string>
+    <string name="ordenFruta">Frutas</string>
+    <string name="ordenVerdura">Verduras</string>
+
+    <!-- string añadir producto -->
+    <string name="hintNombre">Nombre</string>
+    <string name="hintPrecio">Precio</string>
+    <string name="hintMarca">Marca</string>
+    <string name="hintCantidad">Cantidad</string>
+    <string name="textTipo">Seleccione el tipo para terminar</string>
+    <string name="ButtonBebible">Bebible</string>
+    <string name="ButtonFruta">Fruta</string>
+    <string name="ButtonVerdura">Verdura</string>
 </resources>
