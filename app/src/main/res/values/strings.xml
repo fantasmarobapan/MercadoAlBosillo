@@ -16,4 +16,7 @@
     <string name="ButtonTienda">Tiendas</string>
     <string name="ProductoHint">Nombre del producto</string>
     <string name="PrecioHint">Precio del producto</string>
+
+    <string name="minus">-</string>
+    <string name="plus">+</string>
 </resources>

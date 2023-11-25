@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ListView
-import cl.afernandez.mercadoalbosillo.adapters.InventarioDetailDialog
 import cl.afernandez.mercadoalbosillo.adapters.InventarioListAdapter
 import cl.afernandez.mercadoalbosillo.entity.Producto
 

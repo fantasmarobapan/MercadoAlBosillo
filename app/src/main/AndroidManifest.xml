@@ -13,22 +13,7 @@
         android:theme="@style/Theme.MercadoAlBosillo"
         tools:targetApi="31">
         <activity
-            android:name=".AddTiendaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".TiendaDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".TiendaListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".InventoryDetailActivity"
-            android:exported="false" />
-        <activity
             android:name=".InventoryListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AddInventoryActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
