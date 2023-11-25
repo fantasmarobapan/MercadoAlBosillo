@@ -37,7 +37,7 @@ class InventarioListAdapter(
         }
 
         // Actualizar el texto y botones
-        nameTextView.text = item?.producto?.producto
+        nameTextView.text = item?.producto?.nombre
         cantidadTextView.text = item?.cantidad.toString()
 
         // Puedes agregar lógica para los botones según tus necesidades
