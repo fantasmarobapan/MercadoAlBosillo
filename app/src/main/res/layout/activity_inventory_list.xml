@@ -22,13 +22,5 @@
             android:text="@string/ButtonAddProduct"
             android:onClick="goAddProducto"/>
     </LinearLayout>
-    
-    <ListView
-        android:id="@+id/listViewProductos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:divider="@color/gris_oscuro"
-        android:dividerHeight="1dp"
-        />
+
 </LinearLayout>
