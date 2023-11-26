@@ -9,18 +9,18 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import cl.afernandez.mercadoalbosillo.R
-import cl.afernandez.mercadoalbosillo.entity.Item
+import cl.afernandez.mercadoalbosillo.entity.Producto
 
 class InventarioListAdapter(
     context: Context,
     resource: Int,
-    items: List<Item>
-) : ArrayAdapter<Item>(context, resource, items) {
+    productos: List<Producto>
+) : ArrayAdapter<Producto>(context, resource, productos) {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val listItemView = convertView ?: inflater.inflate(R.layout.item_producto, null)
 
-        val item = getItem(position)
+        val producto = getItem(position)
 
         val imageView = listItemView.findViewById<ImageView>(R.id.imageView)
         val nameTextView = listItemView.findViewById<TextView>(R.id.nameTextView)
@@ -29,15 +29,15 @@ class InventarioListAdapter(
         val subtractButton = listItemView.findViewById<Button>(R.id.minusButton)
 
         // Mostrar imagen según el tipo de producto
-        when (item?.producto?.tipo) {
+        when (producto?.tipo) {
             "Bebible" -> imageView.setImageResource(R.drawable.bebible)
             "Vegetal" -> imageView.setImageResource(R.drawable.fruta)
             "Fruta" -> imageView.setImageResource(R.drawable.vegetal)
         }
 
         // Actualizar el texto y botones
-        nameTextView.text = item?.producto?.nombre
-        cantidadTextView.text = item?.cantidad.toString()
+        nameTextView.text = producto?.nombre
+        cantidadTextView.text = producto?.cantidad.toString()
 
         // Puedes agregar lógica para los botones según tus necesidades
         addButton.setOnClickListener {
@@ -55,3 +55,4 @@ class InventarioListAdapter(
         return listItemView
     }
 }
+

@@ -10,13 +10,13 @@ import androidx.appcompat.widget.Toolbar
 import androidx.room.Room
 import cl.afernandez.mercadoalbosillo.adapters.InventarioListAdapter
 import cl.afernandez.mercadoalbosillo.database.AppDataBase
-import cl.afernandez.mercadoalbosillo.entity.Item
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var mToolbar : Toolbar
-    //private lateinit var db: AppDataBase
-    //private lateinit var inventarioListView: MutableList<Item>
-    //private lateinit var inventarioAdapter: InventarioListAdapter
+    private lateinit var mToolbar: Toolbar
+    private lateinit var db: AppDataBase
+    private lateinit var inventarioListView: ListView
+    private lateinit var inventarioAdapter: InventarioListAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -24,19 +24,19 @@ class MainActivity : AppCompatActivity() {
         mToolbar = findViewById(R.id.toolbar)
         setSupportActionBar(mToolbar)
 
-        /*db = Room.databaseBuilder(
+        db = Room.databaseBuilder(
             applicationContext,
             AppDataBase::class.java, "database-name"
         ).allowMainThreadQueries().build()
+
         inventarioListView = findViewById(R.id.inventarioListView)
 
+        // Obtener la lista de productos en lugar de items
         val productos = db.productoDao().getAllProductos()
-        val items = db.itemDao().getAllItems()
 
-        val listaInventario = mutableListOf<Item>()
-        //listaInventario.addAll(productos)
-        listaInventario.addAll(items)*/
-
+        // Crear el adaptador con la lista de productos
+        inventarioAdapter = InventarioListAdapter(this, R.layout.item_producto, productos)
+        inventarioListView.adapter = inventarioAdapter
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

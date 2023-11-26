@@ -6,7 +6,6 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.room.Room
 import cl.afernandez.mercadoalbosillo.database.AppDataBase
-import cl.afernandez.mercadoalbosillo.entity.Item
 import cl.afernandez.mercadoalbosillo.entity.Movimiento
 import cl.afernandez.mercadoalbosillo.entity.Producto
 
@@ -18,6 +17,7 @@ class AddProductoActivity : AppCompatActivity() {
     private lateinit var precioEditText: EditText
     private lateinit var marcaEditText: EditText
     private lateinit var cantidadEditText: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_producto)
@@ -27,52 +27,47 @@ class AddProductoActivity : AppCompatActivity() {
             AppDataBase::class.java, "database-mine"
         ).allowMainThreadQueries().build()
 
-        val ButtonBebible = findViewById<Button>(R.id.buttonBebible)
-        val ButtonFruta = findViewById<Button>(R.id.buttonFruta)
-        val ButtonVerdura = findViewById<Button>(R.id.buttonVerdura)
+        val buttonBebible = findViewById<Button>(R.id.buttonBebible)
+        val buttonFruta = findViewById<Button>(R.id.buttonFruta)
+        val buttonVerdura = findViewById<Button>(R.id.buttonVerdura)
 
         nombreEditText = findViewById(R.id.editTextNombre)
         precioEditText = findViewById(R.id.editTextPrecio)
         marcaEditText = findViewById(R.id.editTextMarca)
         cantidadEditText = findViewById(R.id.editTextCantidad)
 
-        ButtonBebible.setOnClickListener {
+        buttonBebible.setOnClickListener {
             realizarOperacion("Bebible", "Bebible añadido")
         }
 
-        ButtonFruta.setOnClickListener {
+        buttonFruta.setOnClickListener {
             realizarOperacion("Fruta", "Fruta añadida")
         }
 
-        ButtonVerdura.setOnClickListener {
+        buttonVerdura.setOnClickListener {
             realizarOperacion("Verdura", "Verdura añadida")
         }
     }
 
     private fun realizarOperacion(tipo: String, accion: String) {
-        val Snombre = nombreEditText.text.toString()
-        val Sprecio = precioEditText.text.toString().toIntOrNull() ?: 0
-        val Smarca = marcaEditText.text.toString()
-        val Scantidad = cantidadEditText.text.toString().toIntOrNull() ?: 0
+        val nombre = nombreEditText.text.toString()
+        val precio = precioEditText.text.toString().toIntOrNull() ?: 0
+        val marca = marcaEditText.text.toString()
+        val cantidad = cantidadEditText.text.toString().toIntOrNull() ?: 0
 
-        val nuevoproducto = Producto(
-            nombre = Snombre,
-            precio = Sprecio,
-            marca = Smarca,
-            tipo = tipo
+        val nuevoProducto = Producto(
+            nombre = nombre,
+            precio = precio,
+            marca = marca,
+            tipo = tipo,
+            cantidad = cantidad
         )
 
-        db.productoDao().insertProducto(nuevoproducto)
-
-        val nuevoItem = Item(
-            producto = nuevoproducto,
-            cantidad = Scantidad
-        )
-        db.itemDao().insertItem(nuevoItem)
+        db.productoDao().insertProducto(nuevoProducto)
 
         val nuevoMovimiento = Movimiento(
-            itemId = nuevoItem.id,
-            nombreProducto = nuevoproducto.nombre ?: "",
+            itemId = nuevoProducto.id, // No estoy seguro de dónde obtienes esto
+            nombreProducto = nuevoProducto.nombre ?: "",
             accion = accion
         )
 
