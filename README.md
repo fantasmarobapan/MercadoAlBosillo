@@ -44,3 +44,14 @@ Este proyecto es una aplicación móvil que tiene como objetivo ayudar a los usu
 ## Link relevantes
 Link del [video](https://youtu.be/EsBbA89mOo4).  
 Nuevo link de descarga de la [APK](https://mega.nz/file/Mnc1kaBA#CknmYlcOU9hlyQrEY9IV-iarjxe8qvPNu5yQDfXVbIE).
+
+# Segunda Actualizacion
+
+Se solicito simplificar aun más el proyecto para que se pueda gestionar el inventario más ver los ultimos movimientos que se ha realizado
+
+## Diagrama de clases
+Por añadir
+
+## Links relacionados
+Link del [Video](https://youtu.be/Lz5QVmjOJsM)
+Link de descargar de la [APK](https://mega.nz/file/8vtFiIBL#K9xKLnwpg0hImvk8BbLdC3tiA5E9q60YBzzPtkJvKj4)
