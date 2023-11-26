@@ -10,12 +10,15 @@ import androidx.appcompat.widget.Toolbar
 import androidx.room.Room
 import cl.afernandez.mercadoalbosillo.adapters.InventarioListAdapter
 import cl.afernandez.mercadoalbosillo.database.AppDataBase
+import cl.afernandez.mercadoalbosillo.entity.Producto
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mToolbar: Toolbar
     private lateinit var db: AppDataBase
     private lateinit var inventarioListView: ListView
     private lateinit var inventarioAdapter: InventarioListAdapter
+    private lateinit var floatingButton: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,11 +35,18 @@ class MainActivity : AppCompatActivity() {
         inventarioListView = findViewById(R.id.inventarioListView)
 
         // Obtener la lista de productos en lugar de items
-        val productos = db.productoDao().getAllProductos()
+        val productos : List<Producto> = db.productoDao().getAllProductos()
 
         // Crear el adaptador con la lista de productos
         inventarioAdapter = InventarioListAdapter(this, R.layout.item_producto, productos)
         inventarioListView.adapter = inventarioAdapter
+
+        floatingButton = findViewById(R.id.floatingActionButton)
+
+        floatingButton.setOnClickListener {
+            startActivity(Intent(this, AddProductoActivity::class.java))
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -55,3 +65,4 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 }
+

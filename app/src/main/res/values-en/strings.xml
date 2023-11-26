@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">MercadoAlBosillo</string>
+    <string name="Autor">Adolfo Fernandez</string>
+    <string name="ButtonAddShop">Add Shop</string>
+
+
+    <!-- string menu inventario -->
+    <string name="Borrar">Delete</string>
+
+    <!-- string del adapter del inventario -->
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+
+    <!-- string de la toolbar -->
+    <string name="inventario">Inventory</string>
+    <string name="movimiento">Movement</string>
+    <string name="ajustes">config</string>
+
+    <!-- string inventario -->
+    <string name="hintBuscar">Search name</string>
+    <string name="hintOrden">Sort By</string>
+    <string name="ordenDefecto">Most Recent</string>
+    <string name="ordenBebible">Beverages</string>
+    <string name="ordenFruta">Fruits</string>
+    <string name="ordenVerdura">Vegetables</string>
+
+    <!-- Strings for adding a product -->
+    <string name="hintNombre">Name</string>
+    <string name="hintPrecio">Price</string>
+    <string name="hintMarca">Brand</string>
+    <string name="hintCantidad">Quantity</string>
+    <string name="textTipo">Select the type to finish</string>
+    <string name="ButtonBebible">Beverage</string>
+    <string name="ButtonFruta">Fruit</string>
+    <string name="ButtonVerdura">Vegetable</string>
+</resources>

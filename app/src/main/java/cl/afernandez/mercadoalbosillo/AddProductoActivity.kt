@@ -1,5 +1,6 @@
 package cl.afernandez.mercadoalbosillo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -24,7 +25,7 @@ class AddProductoActivity : AppCompatActivity() {
 
         db = Room.databaseBuilder(
             applicationContext,
-            AppDataBase::class.java, "database-mine"
+            AppDataBase::class.java, "database-name"
         ).allowMainThreadQueries().build()
 
         val buttonBebible = findViewById<Button>(R.id.buttonBebible)
@@ -45,7 +46,7 @@ class AddProductoActivity : AppCompatActivity() {
         }
 
         buttonVerdura.setOnClickListener {
-            realizarOperacion("Verdura", "Verdura añadida")
+            realizarOperacion("Vegetal", "Verdura añadida")
         }
     }
 
@@ -66,13 +67,16 @@ class AddProductoActivity : AppCompatActivity() {
         db.productoDao().insertProducto(nuevoProducto)
 
         val nuevoMovimiento = Movimiento(
-            itemId = nuevoProducto.id, // No estoy seguro de dónde obtienes esto
+            itemId = nuevoProducto.id,
             nombreProducto = nuevoProducto.nombre ?: "",
             accion = accion
         )
 
         db.movimientoDao().insertMovimiento(nuevoMovimiento)
 
+        startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
 }
+
+

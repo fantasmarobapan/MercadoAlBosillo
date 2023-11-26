@@ -1,9 +1,12 @@
 package cl.afernandez.mercadoalbosillo.adapters
 
 import android.content.Context
+import android.view.ContextMenu
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageView
@@ -31,8 +34,8 @@ class InventarioListAdapter(
         // Mostrar imagen según el tipo de producto
         when (producto?.tipo) {
             "Bebible" -> imageView.setImageResource(R.drawable.bebible)
-            "Vegetal" -> imageView.setImageResource(R.drawable.fruta)
-            "Fruta" -> imageView.setImageResource(R.drawable.vegetal)
+            "Vegetal" -> imageView.setImageResource(R.drawable.vegetal)
+            "Fruta" -> imageView.setImageResource(R.drawable.fruta)
         }
 
         // Actualizar el texto y botones
@@ -41,15 +44,11 @@ class InventarioListAdapter(
 
         // Puedes agregar lógica para los botones según tus necesidades
         addButton.setOnClickListener {
-            // Lógica para aumentar la cantidad
-            // Puedes comunicarte con la actividad o fragmento que contiene el adaptador
-            // para manejar la lógica de aumento de cantidad
+            //No se logro
         }
 
         subtractButton.setOnClickListener {
-            // Lógica para disminuir la cantidad
-            // Puedes comunicarte con la actividad o fragmento que contiene el adaptador
-            // para manejar la lógica de disminución de cantidad
+            //No se logro
         }
 
         return listItemView
