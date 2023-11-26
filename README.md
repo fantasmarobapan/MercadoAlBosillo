@@ -50,8 +50,9 @@ Nuevo link de descarga de la [APK](https://mega.nz/file/Mnc1kaBA#CknmYlcOU9hlyQr
 Se solicito simplificar aun más el proyecto para que se pueda gestionar el inventario más ver los ultimos movimientos que se ha realizado
 
 ## Diagrama de clases
-Por añadir
+![Segundo Diagrama de Clases](https://github.com/fantasmarobapan/MercadoAlBosillo/blob/master/diagrama%20de%20clasesV2.png)
 
 ## Links relacionados
 Link del [Video](https://youtu.be/Lz5QVmjOJsM)
+
 Link de descargar de la [APK](https://mega.nz/file/8vtFiIBL#K9xKLnwpg0hImvk8BbLdC3tiA5E9q60YBzzPtkJvKj4)
