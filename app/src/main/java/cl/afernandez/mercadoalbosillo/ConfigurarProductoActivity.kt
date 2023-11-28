@@ -110,7 +110,6 @@ class ConfigurarProductoActivity : AppCompatActivity() {
                 if (producto != null) {
                     // Obtener los valores antiguos del producto
                     val nombreAntiguo = producto.nombre
-                    val tipoAntiguo = producto.tipo
 
                     // Actualizar los valores del producto con los ingresados
                     producto.nombre = editTextNombre.text.toString()
@@ -118,19 +117,17 @@ class ConfigurarProductoActivity : AppCompatActivity() {
                     producto.marca = editTextMarca.text.toString()
                     producto.cantidad = editTextCantidad.text.toString().toInt()
 
-                    // Verificar si el tipo de producto ha cambiado
-                    if (!nuevoTipoProducto.isNullOrBlank() && nuevoTipoProducto != producto.tipo) {
-                        // Actualizar el tipo de producto
+                    // Actualizar el tipo de producto si se seleccionó uno nuevo
+                    if (!nuevoTipoProducto.isNullOrBlank()) {
                         producto.tipo = nuevoTipoProducto!!
-
-                        // Agregar lógica para registrar el cambio en MovimientoDao
-                        val movimiento = Movimiento(
-                            itemId = productoId,
-                            nombreProducto = producto.nombre ?: "",
-                            accion = "Producto actualizado"
-                        )
-                        movimientoDao.insertMovimiento(movimiento)
                     }
+                    val movimiento = Movimiento(
+                        itemId = productoId,
+                        nombreProducto = producto.nombre ?: "",
+                        accion = "Producto actualizado"
+                    )
+
+                    movimientoDao.insertMovimiento(movimiento)
 
                     // Actualizar el producto en la base de datos
                     productoDao.updateProducto(producto)
@@ -214,6 +211,5 @@ class ConfigurarProductoActivity : AppCompatActivity() {
                 finish()
             }
         }
-
     }
 }
