@@ -3,13 +3,11 @@ package cl.afernandez.mercadoalbosillo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.AdapterView
+import android.widget.Button
+import android.widget.EditText
 import android.widget.ListView
-import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.room.Room
 import cl.afernandez.mercadoalbosillo.adapters.InventarioListAdapter
@@ -23,6 +21,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var inventarioListView: ListView
     private lateinit var inventarioAdapter: InventarioListAdapter
     private lateinit var floatingButton: FloatingActionButton
+
+    private lateinit var searchedittext: EditText
+    private lateinit var buttonorder: Button
+    var orden = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +52,11 @@ class MainActivity : AppCompatActivity() {
         floatingButton.setOnClickListener {
             startActivity(Intent(this, AddProductoActivity::class.java))
         }
+
+        buttonorder = findViewById(R.id.buttonOrder)
+        searchedittext
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

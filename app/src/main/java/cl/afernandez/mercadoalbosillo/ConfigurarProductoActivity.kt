@@ -163,5 +163,57 @@ class ConfigurarProductoActivity : AppCompatActivity() {
                 finish()
             }
         }
+
+        buttonBorrar.setOnClickListener {
+            // Obtener la ID del producto del Intent
+            val productoId = intent.getLongExtra("producto_id", -1)
+
+            // Verificar si la ID es válida
+            if (productoId != -1L) {
+                // Obtener el producto según la ID
+                val producto = productoDao.getProductoById(productoId)
+
+                // Verificar si el producto existe
+                if (producto != null) {
+                    // Agregar lógica para registrar el borrado en MovimientoDao
+                    val movimiento = Movimiento(
+                        itemId = productoId,
+                        nombreProducto = producto.nombre ?: "",
+                        accion = "Producto eliminado"
+                    )
+                    movimientoDao.insertMovimiento(movimiento)
+
+                    // Eliminar el producto de la base de datos
+                    productoDao.deleteProducto(producto)
+
+                    // Mostrar un mensaje indicando que se eliminó el producto
+                    Toast.makeText(
+                        applicationContext,
+                        "Producto eliminado",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+                    // Cerrar la actividad
+                    finish()
+                } else {
+                    // Manejar el caso en que el producto no existe
+                    Toast.makeText(
+                        applicationContext,
+                        "Producto no encontrado",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    finish()
+                }
+            } else {
+                // Manejar el caso en que la ID no es válida
+                Toast.makeText(
+                    applicationContext,
+                    "ID de producto no válida",
+                    Toast.LENGTH_SHORT
+                ).show()
+                finish()
+            }
+        }
+
     }
 }
