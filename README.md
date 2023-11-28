@@ -53,6 +53,6 @@ Se solicito simplificar aun más el proyecto para que se pueda gestionar el inve
 ![Segundo Diagrama de Clases](https://github.com/fantasmarobapan/MercadoAlBosillo/blob/master/diagrama%20de%20clasesV2.png)
 
 ## Links relacionados
-Link del [Video](https://youtu.be/Lz5QVmjOJsM)
+Link del [Video](https://youtu.be/O0gUT82KAfE)
 
-Link de descargar de la [APK](https://mega.nz/file/8vtFiIBL#K9xKLnwpg0hImvk8BbLdC3tiA5E9q60YBzzPtkJvKj4)
+Link de descargar de la [APK](https://mega.nz/file/B60mxYAY#cYGkuWUqrpqez3RPEUxG8S4m7CNvfcnmx-jo--piEwA)
