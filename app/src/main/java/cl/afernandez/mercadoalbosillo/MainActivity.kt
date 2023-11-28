@@ -70,5 +70,23 @@ class MainActivity : AppCompatActivity() {
             else -> return super.onOptionsItemSelected(item)
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        // Actualiza la lista después de cualquier cambio en la base de datos
+        actualizarLista()
+    }
+
+    fun actualizarLista() {
+        // Obtén la nueva lista de productos después de cualquier modificación
+        val nuevosProductos: List<Producto> = db.productoDao().getAllProductos()
+
+        // Limpiar el adaptador y agregar la nueva lista
+        inventarioAdapter.clear()
+        inventarioAdapter.addAll(nuevosProductos)
+
+        // Notificar al adaptador sobre el cambio
+        inventarioAdapter.notifyDataSetChanged()
+    }
 }
 
