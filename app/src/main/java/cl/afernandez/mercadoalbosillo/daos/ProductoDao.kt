@@ -21,5 +21,8 @@ interface ProductoDao {
 
     @Query("SELECT * FROM productos")
     fun getAllProductos(): List<Producto>
+
+    @Query("SELECT * FROM productos WHERE id = :productId")
+    fun getProductoById(productId: Long): Producto?
 }
 

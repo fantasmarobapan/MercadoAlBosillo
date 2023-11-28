@@ -1,16 +1,15 @@
 package cl.afernandez.mercadoalbosillo.adapters
 
 import android.content.Context
-import android.view.ContextMenu
+import android.content.Intent
 import android.view.LayoutInflater
-import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import cl.afernandez.mercadoalbosillo.ConfigurarProductoActivity
 import cl.afernandez.mercadoalbosillo.R
 import cl.afernandez.mercadoalbosillo.entity.Producto
 
@@ -19,6 +18,7 @@ class InventarioListAdapter(
     resource: Int,
     productos: List<Producto>
 ) : ArrayAdapter<Producto>(context, resource, productos) {
+
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val listItemView = convertView ?: inflater.inflate(R.layout.item_producto, null)
@@ -28,8 +28,7 @@ class InventarioListAdapter(
         val imageView = listItemView.findViewById<ImageView>(R.id.imageView)
         val nameTextView = listItemView.findViewById<TextView>(R.id.nameTextView)
         val cantidadTextView = listItemView.findViewById<TextView>(R.id.amountTextView)
-        val addButton = listItemView.findViewById<Button>(R.id.plusButton)
-        val subtractButton = listItemView.findViewById<Button>(R.id.minusButton)
+        val editButton = listItemView.findViewById<Button>(R.id.editButton)
 
         // Mostrar imagen según el tipo de producto
         when (producto?.tipo) {
@@ -42,16 +41,13 @@ class InventarioListAdapter(
         nameTextView.text = producto?.nombre
         cantidadTextView.text = producto?.cantidad.toString()
 
-        // Puedes agregar lógica para los botones según tus necesidades
-        addButton.setOnClickListener {
-            //No se logro
-        }
-
-        subtractButton.setOnClickListener {
-            //No se logro
+        // Configura el botón para abrir ConfigurarProductoActivity con el producto correspondiente
+        editButton.setOnClickListener {
+            val intent = Intent(context, ConfigurarProductoActivity::class.java)
+            intent.putExtra("producto_id", producto?.id)
+            context.startActivity(intent)
         }
 
         return listItemView
     }
 }
-

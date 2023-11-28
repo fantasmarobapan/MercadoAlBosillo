@@ -5,5 +5,8 @@
         android:id="@+id/action_delete_producto"
         android:title="@string/Borrar"
         />
-
+    <item
+        android:id="@+id/action_edit_producto"
+        android:title="@string/Editar"
+        />
 </menu>

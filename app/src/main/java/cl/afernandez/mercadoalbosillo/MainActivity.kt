@@ -3,9 +3,13 @@ package cl.afernandez.mercadoalbosillo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ContextMenu
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ListView
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.room.Room
 import cl.afernandez.mercadoalbosillo.adapters.InventarioListAdapter
@@ -46,7 +50,6 @@ class MainActivity : AppCompatActivity() {
         floatingButton.setOnClickListener {
             startActivity(Intent(this, AddProductoActivity::class.java))
         }
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -55,14 +58,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
-        if (id == R.id.inventarioOpcion) {
-            startActivity(Intent(this, MainActivity::class.java))
+        when (item.itemId) {
+            R.id.inventarioOpcion -> {
+                startActivity(Intent(this, MainActivity::class.java))
+                return true
+            }
+            R.id.movimientoOpcion -> {
+                startActivity(Intent(this, MovimientosActivity::class.java))
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
         }
-        if (id == R.id.movimientoOpcion) {
-            startActivity(Intent(this, MovimientosActivity::class.java))
-        }
-        return true
     }
 }
 

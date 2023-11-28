@@ -7,10 +7,10 @@
 
     <!-- string menu inventario -->
     <string name="Borrar">Delete</string>
+    <string name="Editar">Editar</string>
 
     <!-- string del adapter del inventario -->
-    <string name="minus">-</string>
-    <string name="plus">+</string>
+    <string name="configurar">Configure</string>
 
     <!-- string de la toolbar -->
     <string name="inventario">Inventory</string>
@@ -34,4 +34,10 @@
     <string name="ButtonBebible">Beverage</string>
     <string name="ButtonFruta">Fruit</string>
     <string name="ButtonVerdura">Vegetable</string>
+
+    <!-- string configurar Producto -->
+    <string name="borrarProducto">Borrar Producto</string>
+    <string name="textProductoEdit">Configure el producto a su gusto</string>
+    <string name="guardarButton">Guardar cambios</string>
+    <string name="textTipoEdit">Seleccione el tipo</string>
 </resources>
