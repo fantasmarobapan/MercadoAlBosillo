@@ -3,13 +3,12 @@
     <string name="Autor">Adolfo Fernandez</string>
     <string name="ButtonAddShop">Añadir tienda</string>
 
-
     <!-- string menu inventario -->
     <string name="Borrar">Borrar</string>
+    <string name="Editar">Editar</string>
 
     <!-- string del adapter del inventario -->
-    <string name="minus">-</string>
-    <string name="plus">+</string>
+    <string name="configurar">Configurar</string>
 
     <!-- string de la toolbar -->
     <string name="inventario">Inventario</string>
@@ -19,7 +18,7 @@
     <!-- string inventario -->
     <string name="hintBuscar">Buscar nombre</string>
     <string name="hintOrden">Ordenar Por</string>
-    <string name="ordenDefecto">Más reciente</string>
+    <string name="ordenDefecto">Por defecto</string>
     <string name="ordenBebible">Bebibles</string>
     <string name="ordenFruta">Frutas</string>
     <string name="ordenVerdura">Verduras</string>
@@ -33,4 +32,10 @@
     <string name="ButtonBebible">Bebible</string>
     <string name="ButtonFruta">Fruta</string>
     <string name="ButtonVerdura">Verdura</string>
+
+    <!-- string configurar Producto -->
+    <string name="borrarProducto">Borrar Producto</string>
+    <string name="textProductoEdit">Configure el producto a su gusto</string>
+    <string name="guardarButton">Guardar cambios</string>
+    <string name="textTipoEdit">Seleccione el tipo</string>
 </resources>

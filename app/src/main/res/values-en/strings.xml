@@ -6,10 +6,10 @@
 
     <!-- string menu inventario -->
     <string name="Borrar">Delete</string>
+    <string name="Editar">Edit</string>
 
     <!-- string del adapter del inventario -->
-    <string name="minus">-</string>
-    <string name="plus">+</string>
+    <string name="configurar">Configure</string>
 
     <!-- string de la toolbar -->
     <string name="inventario">Inventory</string>
@@ -33,4 +33,11 @@
     <string name="ButtonBebible">Beverage</string>
     <string name="ButtonFruta">Fruit</string>
     <string name="ButtonVerdura">Vegetable</string>
+
+    <!-- Strings for configuring a product -->
+    <string name="borrarProducto">Delete Product</string>
+    <string name="textProductoEdit">Configure the product to your liking</string>
+    <string name="guardarButton">Save Changes</string>
+    <string name="textTipoEdit">Select the type</string>
+
 </resources>

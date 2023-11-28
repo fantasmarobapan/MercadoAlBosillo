@@ -7,11 +7,11 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "productos")
 data class Producto(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    val nombre: String?,
-    val precio: Int,
-    val marca: String?,
-    val tipo: String?,
-    val cantidad: Int
+    var nombre: String?,
+    var precio: Int,
+    var marca: String?,
+    var tipo: String?,
+    var cantidad: Int
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readLong(),

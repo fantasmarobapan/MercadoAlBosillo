@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MercadoAlBosillo"
         tools:targetApi="31">
         <activity
+            android:name=".ConfigurarProductoActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddProductoActivity"
             android:exported="false" />
         <activity

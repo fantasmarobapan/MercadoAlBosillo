@@ -7,10 +7,10 @@
 
     <!-- string menu inventario -->
     <string name="Borrar">Delete</string>
+    <string name="Editar">Editar</string>
 
     <!-- string del adapter del inventario -->
-    <string name="minus">-</string>
-    <string name="plus">+</string>
+    <string name="configurar">Configurar</string>
 
     <!-- string de la toolbar -->
     <string name="inventario">Inventory</string>
@@ -18,20 +18,27 @@
     <string name="ajustes">config</string>
 
     <!-- string inventario -->
-    <string name="hintBuscar">Search name</string>
-    <string name="hintOrden">Sort By</string>
-    <string name="ordenDefecto">Most Recent</string>
-    <string name="ordenBebible">Beverages</string>
-    <string name="ordenFruta">Fruits</string>
-    <string name="ordenVerdura">Vegetables</string>
+    <string name="hintBuscar">Buscar nombre</string>
+    <string name="hintOrden">Ordenar Por</string>
+    <string name="ordenDefecto">Por defecto</string>
+    <string name="ordenBebible">Bebibles</string>
+    <string name="ordenFruta">Frutas</string>
+    <string name="ordenVerdura">Verduras</string>
 
     <!-- Strings for adding a product -->
-    <string name="hintNombre">Name</string>
-    <string name="hintPrecio">Price</string>
-    <string name="hintMarca">Brand</string>
-    <string name="hintCantidad">Quantity</string>
-    <string name="textTipo">Select the type to finish</string>
-    <string name="ButtonBebible">Beverage</string>
-    <string name="ButtonFruta">Fruit</string>
-    <string name="ButtonVerdura">Vegetable</string>
+    <string name="hintNombre">Nombre</string>
+    <string name="hintPrecio">Precio</string>
+    <string name="hintMarca">Marca</string>
+    <string name="hintCantidad">Cantidad</string>
+    <string name="textTipo">Seleccione el tipo para terminar</string>
+    <string name="ButtonBebible">Bebible</string>
+    <string name="ButtonFruta">Fruta</string>
+    <string name="ButtonVerdura">Verdura</string>
+
+    <!-- string configurar Producto -->
+    <string name="borrarProducto">Borrar Producto</string>
+    <string name="textProductoEdit">Configure el producto a su gusto</string>
+    <string name="guardarButton">Guardar cambios</string>
+    <string name="textTipoEdit">Seleccione el tipo</string>
+
 </resources>

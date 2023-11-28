@@ -56,4 +56,18 @@ class MovimientosActivity : AppCompatActivity() {
         }
         return true
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        // Obtener la lista de movimientos desde la base de datos
+        val movimientos: List<Movimiento> = db.movimientoDao().getAllMovimientos()
+
+        // Limpiar el adaptador y agregar los nuevos datos
+        movimientoAdapter.clear()
+        movimientoAdapter.addAll(movimientos)
+
+        // Notificar al adaptador sobre los cambios
+        movimientoAdapter.notifyDataSetChanged()
+    }
 }

@@ -28,14 +28,14 @@ class AddProductoActivity : AppCompatActivity() {
             AppDataBase::class.java, "database-name"
         ).allowMainThreadQueries().build()
 
-        val buttonBebible = findViewById<Button>(R.id.buttonBebible)
-        val buttonFruta = findViewById<Button>(R.id.buttonFruta)
-        val buttonVerdura = findViewById<Button>(R.id.buttonVerdura)
+        val buttonBebible = findViewById<Button>(R.id.buttonBebibleEdit)
+        val buttonFruta = findViewById<Button>(R.id.buttonFrutaEdit)
+        val buttonVerdura = findViewById<Button>(R.id.buttonVerduraEdit)
 
-        nombreEditText = findViewById(R.id.editTextNombre)
-        precioEditText = findViewById(R.id.editTextPrecio)
-        marcaEditText = findViewById(R.id.editTextMarca)
-        cantidadEditText = findViewById(R.id.editTextCantidad)
+        nombreEditText = findViewById(R.id.editTextNombreEdit)
+        precioEditText = findViewById(R.id.editTextPrecioEdit)
+        marcaEditText = findViewById(R.id.editTextMarcaEdit)
+        cantidadEditText = findViewById(R.id.editTextCantidadEdit)
 
         buttonBebible.setOnClickListener {
             realizarOperacion("Bebible", "Bebible añadido")

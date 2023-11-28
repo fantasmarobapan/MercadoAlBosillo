@@ -11,25 +11,25 @@
         layout="@layout/toolbard" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/searchEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/hintBuscar"
-        android:inputType="text"
+        android:inputType="text|textFilter"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include2" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonOrder"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/ordenDefecto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextText"
+        app:layout_constraintStart_toEndOf="@+id/searchEditText"
         app:layout_constraintTop_toBottomOf="@+id/include2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -52,7 +52,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/searchEditText"
+        android:clickable="true"
+        android:longClickable="true"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
