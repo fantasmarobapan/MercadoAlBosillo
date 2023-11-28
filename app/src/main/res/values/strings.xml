@@ -18,7 +18,7 @@
     <!-- string inventario -->
     <string name="hintBuscar">Buscar nombre</string>
     <string name="hintOrden">Ordenar Por</string>
-    <string name="ordenDefecto">Más reciente</string>
+    <string name="ordenDefecto">Por defecto</string>
     <string name="ordenBebible">Bebibles</string>
     <string name="ordenFruta">Frutas</string>
     <string name="ordenVerdura">Verduras</string>

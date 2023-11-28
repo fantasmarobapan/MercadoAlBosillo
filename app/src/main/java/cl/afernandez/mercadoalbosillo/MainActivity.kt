@@ -24,7 +24,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var searchedittext: EditText
     private lateinit var buttonorder: Button
-    var orden = 0
+    private lateinit var ordenesArray: Array<String>
+    private var indiceOrdenActual = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,8 +55,23 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonorder = findViewById(R.id.buttonOrder)
-        searchedittext
 
+        ordenesArray = arrayOf(
+            getString(R.string.ordenDefecto),
+            getString(R.string.ordenBebible),
+            getString(R.string.ordenFruta),
+            getString(R.string.ordenVerdura)
+        )
+        buttonorder.setOnClickListener {
+            // Cambiar al siguiente modo de orden
+            indiceOrdenActual = (indiceOrdenActual + 1) % ordenesArray.size
+
+            // Actualizar el texto del botón según el nuevo modo de orden
+            buttonorder.text = ordenesArray[indiceOrdenActual]
+
+            // Actualizar la lista después de cambiar el orden
+            actualizarLista()
+        }
 
     }
 
@@ -86,7 +102,13 @@ class MainActivity : AppCompatActivity() {
 
     fun actualizarLista() {
         // Obtén la nueva lista de productos después de cualquier modificación
-        val nuevosProductos: List<Producto> = db.productoDao().getAllProductos()
+        val nuevosProductos: List<Producto> = when (ordenesArray[indiceOrdenActual]) {
+            getString(R.string.ordenDefecto) -> db.productoDao().getAllProductos()
+            getString(R.string.ordenBebible) -> db.productoDao().getProductosByTipo("Bebible")
+            getString(R.string.ordenFruta) -> db.productoDao().getProductosByTipo("Fruta")
+            getString(R.string.ordenVerdura) -> db.productoDao().getProductosByTipo("Vegetal")
+            else -> db.productoDao().getAllProductos() // Manejo por defecto, si es necesario
+        }
 
         // Limpiar el adaptador y agregar la nueva lista
         inventarioAdapter.clear()

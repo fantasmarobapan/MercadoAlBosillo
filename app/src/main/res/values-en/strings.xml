@@ -9,7 +9,7 @@
     <string name="Editar">Edit</string>
 
     <!-- string del adapter del inventario -->
-    <string name="configurar">Configurar</string>
+    <string name="configurar">Configure</string>
 
     <!-- string de la toolbar -->
     <string name="inventario">Inventory</string>
